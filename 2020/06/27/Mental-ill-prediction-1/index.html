@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="高天宇">
   <meta name="keywords" content="">
-  <title>基于脑影像的精神疾病预测(1) 笔记 - Atri</title>
+  <title>基于脑影像的精神疾病预测 归纳 - Atri</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      3.9k 字
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12
+      41
        分钟
     </span>
   
@@ -204,14 +204,20 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h1 id="基于脑影像的精神疾病预测（1）"><a href="#基于脑影像的精神疾病预测（1）" class="headerlink" title="基于脑影像的精神疾病预测（1）"></a>基于脑影像的精神疾病预测（1）</h1><h3 id="本文的主要目的"><a href="#本文的主要目的" class="headerlink" title="本文的主要目的"></a>本文的主要目的</h3><p>1.系统地回顾和比较大量的最近的精神障碍诊断/预测研究在：MDD（抑郁症）,双相情感障碍、自闭症,多动症,强迫症(OCD),社交焦虑障碍(SAD),创伤后应激障碍(PTSD)和药物依赖(SD)等疾病类型中的发展。<br><font color=red>回顾发展</font></p>
+              <h1 id="基于脑影像的精神疾病预测——归纳"><a href="#基于脑影像的精神疾病预测——归纳" class="headerlink" title="基于脑影像的精神疾病预测——归纳"></a>基于脑影像的精神疾病预测——归纳</h1><h3 id="本文的主要目的"><a href="#本文的主要目的" class="headerlink" title="本文的主要目的"></a>本文的主要目的</h3><p>1.系统地回顾和比较大量的最近的精神障碍诊断/预测研究在：MDD（抑郁症）,双相情感障碍、自闭症,多动症,强迫症(OCD),社交焦虑障碍(SAD),创伤后应激障碍(PTSD)和药物依赖(SD)等疾病类型中的发展。<br><font color=red>回顾发展</font></p>
 <p>2.讨论现有的机器学习技术的实际应用能力和缺陷.<br><font color=red>如何应用和现有缺陷</font></p>
-<p>3.讨论当前该类研究存在一些问题，并从未来发展方向的角度出发来解决一些挑战。<br><font color=red>如何改进</font>  </p>
+<p>3.讨论当前该类研究存在一些问题，并从未来发展方向的角度出发来解决一些挑战。<br><font color=red>如何改进</font></p>
 <h2 id="1-发展性精神疾病预测的研究流程"><a href="#1-发展性精神疾病预测的研究流程" class="headerlink" title="1. 发展性精神疾病预测的研究流程"></a>1. 发展性精神疾病预测的研究流程</h2><p>通常包含以下步骤：<br>&emsp;&emsp;(a) 特征提取和选择/缩减；<br>&emsp;&emsp;(b) 分类器训练；<br>&emsp;&emsp;(c) 分类和CV；<br>&emsp;&emsp;(d) 模型性能评估。  </p>
 <h3 id="1-gt-特征提取、选择-减少"><a href="#1-gt-特征提取、选择-减少" class="headerlink" title="1&gt; 特征提取、选择/减少"></a>1&gt; 特征提取、选择/减少</h3><p>&emsp;&emsp;将神经图像拍出来，然后提取特征，这个文章中特征一般指有用的特征。<br>找出特征，同时要精简特征（提高准确率，也是提高运算速度）<br>常见的特征选择方法包括:<br>&emsp;&emsp;(a)专家特征选择(基于先验知识)<br>&emsp;&emsp;&emsp;&emsp;先验知识：就是以前知道的知识<br>&emsp;&emsp;(b)自动特征选择(基于特征选择算法)  </p>
 <h3 id="2-gt-分类训练器"><a href="#2-gt-分类训练器" class="headerlink" title="2&gt; 分类训练器"></a>2&gt; 分类训练器</h3><p>分类器就是，对未知的数据分类（根据已知的训练数据）  </p>
-<h4 id="最近邻方法（Nearest-neighbor）"><a href="#最近邻方法（Nearest-neighbor）" class="headerlink" title="最近邻方法（Nearest-neighbor）"></a>最近邻方法（Nearest-neighbor）</h4><p>&emsp;&emsp;给定一个训练数据集，对新的输入实例，在训练数据集中找到与该实例最邻近的K个实例，这K个实例的多数属于某个类，就把该输入实例分类到这个类中。<br>就是找几个差不多的，看别人属于什么它就属于什么。  </p>
-<h4 id="判别模型和生成模型（Discriminative-and-generative-models）"><a href="#判别模型和生成模型（Discriminative-and-generative-models）" class="headerlink" title="判别模型和生成模型（Discriminative and generative models）"></a>判别模型和生成模型（Discriminative and generative models）</h4><p>生成模型：学习得到联合概率分布P(x,y)，即特征x和标记y共同出现的概率，然后求条件概率分布。能够学习到数据生成的机制。  </p>
+<ul>
+<li>最近邻方法（Nearest-neighbor）  </li>
+</ul>
+<p>&emsp;&emsp;给定一个训练数据集，对新的输入实例，在训练数据集中找到与该实例最邻近的K个实例，这K个实例的多数属于某个类，就把该输入实例分类到这个类中。<br>就是找几个差不多的，看别人属于什么它就属于什么。  </p>
+<ul>
+<li>判别模型和生成模型（Discriminative and generative models）   </li>
+</ul>
+<p>生成模型：学习得到联合概率分布P(x,y)，即特征x和标记y共同出现的概率，然后求条件概率分布。能够学习到数据生成的机制。  </p>
 <p>判别模型：学习得到条件概率分布P(y|x)，即在特征x出现的情况下标记y出现的概率。</p>
 <p>数据要求：生成模型需要的数据量比较大，能够较好地估计概率密度；而判别模型对数据样本量的要求没有那么多  </p>
 <p>重要的判别模型和生成模型：  </p>
@@ -223,6 +229,7 @@
 <li>随机森林方法（Random forest）</li>
 <li>深度学习方法分类（难）  </li>
 </ol>
+<hr>
 <h3 id="3-gt-分类和CV（交叉验证）"><a href="#3-gt-分类和CV（交叉验证）" class="headerlink" title="3&gt; 分类和CV（交叉验证）"></a>3&gt; 分类和CV（交叉验证）</h3><p>CV -&gt; Cross-Validation 交叉验证  </p>
 <p>&emsp;&emsp;这不是某一个方法的名称，而是一类方法的统称，主要形式是把训练集分成两部分，一部分是用来训练模型，另一部门用来验证模型，相当于一份数据集被分为训练集和验证集。<br>&emsp;&emsp;这样做主要是因为数据集中可能会有一些样本不平衡导致模型过拟合，增加验证集来验证模型，通过这种方法来了解模型的泛化能力。<br>两种常见方法：  </p>
 <ol>
@@ -247,6 +254,185 @@
 <li>receiver operating characteristic (ROC)曲线  </li>
 </ol>
 <p>分类性能度量指标的解释：<a href="https://blog.csdn.net/miao0967020148/article/details/88583824" target="_blank" rel="noopener">链接</a></p>
+<h2 id="2-利用神经影像学技术预测精神疾病"><a href="#2-利用神经影像学技术预测精神疾病" class="headerlink" title="2. 利用神经影像学技术预测精神疾病"></a>2. 利用神经影像学技术预测精神疾病</h2><p>&emsp;&emsp;回顾了最近用于神经影像学分类和预测的预测方法，并提供了对精神疾病预测的研究概况。</p>
+<h3 id="1-gt-主要精神疾病类型"><a href="#1-gt-主要精神疾病类型" class="headerlink" title="1&gt; 主要精神疾病类型"></a>1&gt; 主要精神疾病类型</h3><ol>
+<li>SZ（精分）</li>
+<li>MDD（抑郁症）</li>
+<li>ADHD （多动症）,</li>
+<li>ASD （自闭症谱系障碍）</li>
+<li>PTSD（创伤后应激障碍）</li>
+<li>OCD（强迫性行为障碍）</li>
+<li>SAD（焦虑症）</li>
+<li>SD（物质依赖症）</li>
+</ol>
+<h3 id="2-gt-具体疾病分析"><a href="#2-gt-具体疾病分析" class="headerlink" title="2&gt; 具体疾病分析"></a>2&gt; 具体疾病分析</h3><ol>
+<li><p>精分相关研究</p>
+<ul>
+<li>精分是什么？<br>&emsp;&emsp;SZ是一种慢性精神障碍，其典型特征为认知问题、对现实的感知解体、听觉和/或视觉幻觉，是一种具有持续性损伤的慢性过程。</li>
+<li>相关研究：<ul>
+<li>使用结构MRI的研究<ul>
+<li>使用基于体素的特征集，并应用高维非线性模式分类方法来计算SZ与HC (HC)的分离程度</li>
+<li>sMRI和主成分特征选择方法</li>
+</ul>
+</li>
+<li>fMRI数据的预测研究<ul>
+<li>基于任务态fMRI的研究</li>
+<li>静息态数据研究</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>抑郁症（MDD）和双向情感障碍（BP）相关研究</p>
+<ul>
+<li>难点： 两种症状具有重叠性，区分具体挑战性。  </li>
+<li>现在的研究情况： 现有研究利用了多种基于MRI的特征  </li>
+<li>缺点： 未出现泛化性能较好的分类模型。</li>
+<li>未来的研究趋势： 应该采用大规模的样本量和更多的BP预测研究。</li>
+</ul>
+</li>
+<li><p>自闭症谱系障碍(ASD)</p>
+<ul>
+<li>ASD是什么？<br>&emsp;&emsp;ASD是一种神经发育障碍，其特征是社会交流受损、社会情感互惠的缺失、用于社会交往的非言语交际行为和刻板印象行为的缺失。</li>
+<li>相关研究现状：<br>&emsp;&emsp;利用了所有可用的MRI数据模式作为预测ASD的特征，但样本量以及基于每种模式的研究相对较少。此外，与自闭症谱系障碍相关的异质性，包括低功能和高功能患者的亚型，应该进一步使用预测模型进行研究。</li>
+</ul>
+</li>
+<li><p>多动症（ADHD）</p>
+<ul>
+<li>缺乏基于生物学的诊断方法,准确率低，样本小。</li>
+</ul>
+</li>
+<li><p>强迫行为障碍（OCD）</p>
+<ul>
+<li>研究少，发展缓慢，样本小，泛化差</li>
+</ul>
+</li>
+<li><p>焦虑症（SAD）</p>
+</li>
+</ol>
+<ul>
+<li>论文仅有2篇，样本小，准确率高，研究表明有用的特征广泛分布于大脑的各区域，而非局部。 </li>
+</ul>
+<ol start="7">
+<li>创伤后应激障碍（PTSD）</li>
+</ol>
+<ul>
+<li>目前只有一项研究，准确率91%，研究表明最具鉴别性的特征出现在不同的大脑区域，尤其是左顶叶和右顶叶区域。</li>
+</ul>
+<ol start="8">
+<li>物质依赖（SD）</li>
+</ol>
+<ul>
+<li>研究少，准确率低，唯一使用多通道成像方法进行治疗预测的研究，是基于非人类数据。<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3></li>
+<li>支持<a href="https://www.zhihu.com/question/21094489" target="_blank" rel="noopener">向量机</a>分类器是所有主要疾病中最常用的分类器，其次是LDA分类器。</li>
+<li>支持向量机分类方法，在大多数主要疾病中都能实现非常高的准确率。</li>
+<li>结构MRI的体积和皮质厚度，功能磁共振成像数据的ROIs或ICA组件和dMRI数据的FA之间的激活图和功能连接是最常用的分类特征。</li>
+</ul>
+<h2 id="3-从临床应用的转化视角看基于脑的预测组研究"><a href="#3-从临床应用的转化视角看基于脑的预测组研究" class="headerlink" title="3. 从临床应用的转化视角看基于脑的预测组研究"></a>3. 从临床应用的转化视角看基于脑的预测组研究</h2><h3 id="1-gt-将预测结果转化为临床应用"><a href="#1-gt-将预测结果转化为临床应用" class="headerlink" title="1&gt; 将预测结果转化为临床应用"></a>1&gt; 将预测结果转化为临床应用</h3><p>将预测模型直接用于临床之前，需要一个鉴别诊断的过程。<br>预测建模的一些直接临床应用可能包括：</p>
+<ul>
+<li>除了临床访谈外，形成基于生物标志物的诊断</li>
+<li>多类别分类</li>
+<li>患者筛选  </li>
+<li>治疗反应/结果预测</li>
+<li>药物试验设计<h3 id="2-gt-连续测量与分类诊断"><a href="#2-gt-连续测量与分类诊断" class="headerlink" title="2&gt; 连续测量与分类诊断"></a>2&gt; 连续测量与分类诊断</h3>&emsp;&emsp;本文中调查的大多数精神疾病预测研究都是基于为测试样本分配离散或分类标签。然而，分类诊断方法在预测某一疾病类别时忽略了连续测量，这可能导致误导的结果，或遗漏了对预测风险有用的亚临床趋势。<br>研究现状:</li>
+<li>Wang及其同事最近的一项研究提出了一个使用关联向量机(RVM)构建回归的框架，与支持向量回归类似。</li>
+<li>ognin及其同事基于脑灰质体积和皮质厚度测量，使用相关向量回归预测精神病高危人群的正、负综合征量表得分。</li>
+</ul>
+<h2 id="4-基于大脑的预测组的当前研究趋势"><a href="#4-基于大脑的预测组的当前研究趋势" class="headerlink" title="4. 基于大脑的预测组的当前研究趋势"></a>4. 基于大脑的预测组的当前研究趋势</h2><h3 id="1-gt-单变量和多变量方法"><a href="#1-gt-单变量和多变量方法" class="headerlink" title="1&gt; 单变量和多变量方法"></a>1&gt; 单变量和多变量方法</h3><p>&emsp;&emsp;<strong>多变量</strong>的神经影像学分析方法发展受到关注。    </p>
+<p>&emsp;&emsp;多体素模式方法估计了跨脑区域激活的<strong>相关性</strong>或<strong>协方差</strong>。  </p>
+<p>&emsp;&emsp;多变量神经成像方法考虑了大脑活动在多个空间位置同时发生的整个空间模式，能够探测到单变量方法无法捕捉到的大脑活动的细微但局部的测量。多变量方法可能提供更强大的统计能力和更好的重现性。多变量机器学习方法同时整合可用的特征来联合区分不同的组。</p>
+<p>&emsp;&emsp;体素：三维空间中的最小单元，和二维中的像素对应  </p>
+<p>已有多种多变量机器学习方法在基于神经图像的预测中得到了应用：</p>
+<ol>
+<li>SVM(支持向量机)<font color=red>分类性能最好</font></li>
+<li>k近邻(k-nearest neighbor, KNN)</li>
+<li>高斯朴素贝叶斯(Gaussian Naive Bayes, GNB)</li>
+<li>LDA  </li>
+</ol>
+<p>其他方法： </p>
+<ol>
+<li>随机森林(Breiman, 2001)</li>
+<li>深度学习</li>
+<li>人工神经网络分类器。  </li>
+</ol>
+<h3 id="2-gt-多模态研究"><a href="#2-gt-多模态研究" class="headerlink" title="2&gt; 多模态研究"></a>2&gt; 多模态研究</h3><p>&emsp;&emsp;同一个对象，描述的方式不同（视角或领域不同），把描述这些数据的每一个领域或者视角叫做一个<strong>模态（Modality）</strong></p>
+<p>&emsp;&emsp;多模态数据融合方法利用两种数据模式的互补信息，通过考虑模态间的关系来共同估计它们之间的关联。<br>两种主要的融合技术：</p>
+<ol>
+<li>一种是利用某一模态数据约束另一模态数据，如MRI数据约束EEG数据的源重建方法。</li>
+<li>另一种模态的独立成分分析的联合分析，如联合独立成分分析(joint- independent component analysis, joint- ica)或平行独立成分分析(parallel- ica)。</li>
+</ol>
+<p>很多研究结果表明，多模态的准确性比较高，有很广阔的发展前景。  </p>
+<h3 id="3-gt-疾病亚型的多分类研究，对减少疾病异质性的探索"><a href="#3-gt-疾病亚型的多分类研究，对减少疾病异质性的探索" class="headerlink" title="3&gt; 疾病亚型的多分类研究，对减少疾病异质性的探索"></a>3&gt; 疾病亚型的多分类研究，对减少疾病异质性的探索</h3><p>&emsp;&emsp;传统的病例对照模型, 忽略了疾病组内部的异质性，将预定的病例或对照标签分配给测试样本。许多严重的精神疾病，如SZ、分裂情感性障碍、单极型和双极型抑郁症以及其他情感障碍都有<strong>大量重叠的症状</strong>，因此仅根据所报告的症状进行疾病预测不足以准确诊断。</p>
+<h3 id="4-gt-进阶的基于大脑数据的预测算法"><a href="#4-gt-进阶的基于大脑数据的预测算法" class="headerlink" title="4&gt; 进阶的基于大脑数据的预测算法"></a>4&gt; 进阶的基于大脑数据的预测算法</h3><p>最新的几种算法：  </p>
+<ol>
+<li>一种新的基于ICA的平行分析框架，联合估计SZ中功能网络可变性和结构共变之间的关联，并基于这些相关的功能/结构特征预测几个认知域得分(Qi et al.， 2019);。 <a href="https://www.researchgate.net/publication/333164981_Parallel_group_ICAICA_Joint_estimation_of_linked_functional_network_variability_and_structural_covariation_with_application_to_schizophrenia" target="_blank" rel="noopener">论文链接</a></li>
+<li>SZ最近的另一项研究提出了一种多位点典型相关分析与联合ICA(MCCAR+jICA)相结合的多模态融合算法。<a href="https://www.nature.com/articles/s41467-018-05432-w" target="_blank" rel="noopener">论文链接</a></li>
+</ol>
+<h3 id="5-gt-基于大脑数据预测的功能连接测量方法"><a href="#5-gt-基于大脑数据预测的功能连接测量方法" class="headerlink" title="5&gt; 基于大脑数据预测的功能连接测量方法"></a>5&gt; 基于大脑数据预测的功能连接测量方法</h3><p>&emsp;&emsp;近年来，利用神经影像学研究大脑连通性已经成为研究大脑网络之间联系的热门方法。功能连通性(FC)可以使用各种不同的神经成像技术进行量化。   </p>
+<p>两种广泛使用的FC方法：</p>
+<ul>
+<li>基于种子的分析</li>
+<li>纯数据驱动的方法，如ICA   </li>
+</ul>
+<p>同时注意应消除冗余特征。</p>
+<h2 id="5-基于脑影像数据预测组研究的共同缺陷"><a href="#5-基于脑影像数据预测组研究的共同缺陷" class="headerlink" title="5. 基于脑影像数据预测组研究的共同缺陷"></a>5. 基于脑影像数据预测组研究的共同缺陷</h2><p>机器学习面对更加复杂，高维的大脑时候，遇到的困难：</p>
+<ol>
+<li>特征的选择和缩减</li>
+<li>过拟合问题</li>
+<li>最优模型选择</li>
+<li>可重复性问题</li>
+<li>不同研究预测结果一致性</li>
+<li>患者之间的异质性</li>
+</ol>
+<h2 id="6-利用脑影像数据对疾病预测的预测组分析的未来发展方向"><a href="#6-利用脑影像数据对疾病预测的预测组分析的未来发展方向" class="headerlink" title="6. 利用脑影像数据对疾病预测的预测组分析的未来发展方向"></a>6. 利用脑影像数据对疾病预测的预测组分析的未来发展方向</h2><h3 id="1-gt-使用深度学习进行预测"><a href="#1-gt-使用深度学习进行预测" class="headerlink" title="1&gt;使用深度学习进行预测"></a>1&gt;使用深度学习进行预测</h3><p> 优点：</p>
+<ul>
+<li><p>能够实现数据驱动的自动功能相关的学习和消除主观性特征选择</p>
+</li>
+<li><p>深度模型设计,包括非线性层的层次结构,允许模型有效地识别复杂的数据模  </p>
+<p>缺点：</p>
+<ul>
+<li><a href="https://blog.csdn.net/xuaho0907/article/details/88649141" target="_blank" rel="noopener">过度拟合</a></li>
+<li>需要大量数据，且成像数据噪声不能过大</li>
+<li>缺乏透明性，限制了结果的可解释性</li>
+<li>工作流程的集成开发。特别是模型的临床应用</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-gt-大型数据样本的收集问题"><a href="#2-gt-大型数据样本的收集问题" class="headerlink" title="2&gt; 大型数据样本的收集问题"></a>2&gt; 大型数据样本的收集问题</h3><p>缺乏更大，细节更多的数据集。  </p>
+<p>小的样本集会导致以下问题：</p>
+<ul>
+<li>类器性能下降缺乏诊断目的的泛化</li>
+<li>无法处理疾病异质性</li>
+<li>以及由于样本量不足导致的模型过拟合</li>
+</ul>
+<p>目前提出的解决方案：提出各种大数据计划：</p>
+<ul>
+<li>集中的</li>
+<li>分散的数据共享存储</li>
+<li>大规模的研究</li>
+</ul>
+<p>大的样本可能会导致的问题：</p>
+<ul>
+<li>不同地方对获取数据的方法和处理的不一致</li>
+<li>给统计方面带来的挑战</li>
+<li>大数据的特征过多，维数过大</li>
+<li>个人隐私  </li>
+</ul>
+<h3 id="3-gt-神经影像领域的标准机器学习竞赛"><a href="#3-gt-神经影像领域的标准机器学习竞赛" class="headerlink" title="3&gt; 神经影像领域的标准机器学习竞赛"></a>3&gt; 神经影像领域的标准机器学习竞赛</h3><p>&emsp;&emsp;开展竞赛，使得基于脑影像数据的预测组研究的方法部分将得到快速的提升。  </p>
+<h3 id="4-gt-利用动态连接分析方法的优势"><a href="#4-gt-利用动态连接分析方法的优势" class="headerlink" title="4&gt; 利用动态连接分析方法的优势"></a>4&gt; 利用动态连接分析方法的优势</h3><p>原来的方法产生缺陷的原因：<br>&emsp;&emsp;大脑功能的连通性可以在短时间内发生变化(比如几十秒)，并可以成功地捕捉到疾病人群中连通性中断的情况。 </p>
+<p>动态连接方案：</p>
+<ul>
+<li>利用静态和动态连接特性，开发新框架，Rashid和同事的研究表明，功能连接中的动态模式可能比静态FNC提供更清晰、更丰富的信息。</li>
+<li>使用一种新的递归神经网络(RNN)方法,来测量大脑网络之间的时间动态和依赖关系。</li>
+<li>使用SVM分类器和LOOCV/10-fold CV对ADHD儿童进行分类</li>
+</ul>
+<p>以上方案的成功表明：利用动态功能连接的特性可能可以更加有效的提升模型的分类表现。</p>
+<h3 id="5-gt-动态连接和其他数据类型的融合"><a href="#5-gt-动态连接和其他数据类型的融合" class="headerlink" title="5&gt; 动态连接和其他数据类型的融合"></a>5&gt; 动态连接和其他数据类型的融合</h3><p>融合分析的例子：</p>
+<ul>
+<li>基因组和结构MRI数据</li>
+<li>动态FNC状态和基因组特征的关联模型</li>
+</ul>
 
             </article>
             <hr>
@@ -276,6 +462,12 @@
                 <div class="post-prevnext row">
                   <div class="post-prev col-6">
                     
+                    
+                      <a href="/2020/06/29/Mental-ill-prediction-2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Mental-ill-prediction-2</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </div>
                   <div class="post-next col-6">
@@ -404,7 +596,7 @@
         listClass: 'tocbot-list',
         isCollapsedClass: 'tocbot-is-collapsed',
         collapsibleClass: 'tocbot-is-collapsible',
-        collapseDepth: 6,
+        collapseDepth: 3,
         scrollSmooth: true,
         headingsOffset: -boardTop
       });
@@ -421,7 +613,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "基于脑影像的精神疾病预测(1) 笔记&nbsp;",
+        "基于脑影像的精神疾病预测 归纳&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

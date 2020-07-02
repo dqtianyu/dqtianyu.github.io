@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="高天宇">
   <meta name="keywords" content="">
-  <title>EssentialP2-1 - Atri</title>
+  <title>MDD_fMRI - Atri</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -152,8 +152,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-06-23 22:42">
-      2020年6月23日 晚上
+    <time datetime="2020-07-01 23:41">
+      2020年7月1日 晚上
     </time>
   </div>
 
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      208 字
+      1.4k 字
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      15
        分钟
     </span>
   
@@ -204,82 +204,155 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>Essential C++ 练习题2-1 </p>
-<a id="more"></a>
-<h1 id="Essential-C-P2-1"><a href="#Essential-C-P2-1" class="headerlink" title="Essential C++ P2-1"></a>Essential C++ P2-1</h1><h2 id="练习2-1"><a href="#练习2-1" class="headerlink" title="练习2.1"></a>练习2.1</h2><blockquote>
-<p>改变main的输入，让用户多次输入</p>
-</blockquote>
-<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdlib&gt;</span></span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
-<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">fibon_elem</span><span class="hljs-params">(<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span> &amp;)</span></span>;
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">int</span> pos;
-    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)
-    &#123;
-        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Please enter a position: "</span>;
-        <span class="hljs-built_in">cin</span> &gt;&gt; pos;
+              <h1 id="基于静息态功能磁共振的抑郁症辅助诊断研究"><a href="#基于静息态功能磁共振的抑郁症辅助诊断研究" class="headerlink" title="基于静息态功能磁共振的抑郁症辅助诊断研究"></a>基于静息态功能磁共振的抑郁症辅助诊断研究</h1><p>任务目标：<br>&emsp;&emsp;下一步我们要研究基于静息态功能磁共振的抑郁症辅助诊断。所以请从网上查一下资料，了解一下你对目前这个问题的研究现状的认识。<br>&emsp;&emsp;基于静息态功能磁共振的抑郁症辅助诊断研究</p>
+<ol>
+<li>研究的意义</li>
+<li>研究现状（目前都采用什么方法研究，存在什么问题等） </li>
+</ol>
+<h2 id="研究的意义"><a href="#研究的意义" class="headerlink" title="研究的意义"></a>研究的意义</h2><p>&emsp;&emsp;现代社会人们会受到各种压力，使得产生的心里问题，最常见的一种就是抑郁症，抑郁症容易导致自杀倾向和各种疾病。<br>&emsp;&emsp;传统的抑郁症判断方式，要用一些临床的手段，和病人身边人的描述，再结合医生自身的经验，进行判断。这种方法主观性比较强。<br>&emsp;&emsp;如果能使用基于FMRI进行判断，能够起到判断的辅助作用，早发现早治疗。  </p>
+<h2 id="静息态方法在抑郁症方面的研究"><a href="#静息态方法在抑郁症方面的研究" class="headerlink" title="静息态方法在抑郁症方面的研究"></a>静息态方法在抑郁症方面的研究</h2><p>静息态和任务态是什么？  </p>
+<ul>
+<li>静息态就是人躺着不动，来扫描</li>
+<li>任务态会让人在扫描的时候做出特定动作。</li>
+</ul>
+<p>主要的研究方法概括为两类：</p>
+<ul>
+<li>基于感兴趣区域（Region of Intersest）分析<ul>
+<li>根据先验知识，选择部分ROI作为种子点，然后建立种子点与其他的脑区的功能连接模型</li>
+</ul>
+</li>
+<li>独立成分分析(Independent Component Analysis)<ul>
+<li>不需要预先设置种子点</li>
+<li>先对大脑进行分析，然后分解成若干成分，最后建立各部分的连接模型    </li>
+</ul>
+</li>
+</ul>
+<!--
++ 感兴趣区域：
+  + **前扣带回区域**是抑郁症病理环路中重要的区域之一  
 
-        <span class="hljs-keyword">int</span> mElem;
-        <span class="hljs-keyword">if</span> (fibon_elem(pos, mElem))
-            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"element #"</span> &lt;&lt; pos &lt;&lt; <span class="hljs-string">" is "</span> &lt;&lt; mElem &lt;&lt; <span class="hljs-built_in">endl</span>;
-        <span class="hljs-keyword">else</span>
-            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Sorry. Could not calculate element #"</span>
-                 &lt;&lt; pos &lt;&lt; <span class="hljs-built_in">endl</span>;
+  + **双侧楔前叶**及**后扣带回皮质**与**尾状核**之间的功能连接均存在显著降低
+  + **背内侧前额叶**与**楔前叶**，以及**背外侧前额叶**与**前扣带回**之间的功能连接，抑郁症患者出现显著升高
++ 局部一致性指标 （REHO）
 
-        <span class="hljs-keyword">char</span> exitFlag = <span class="hljs-string">'n'</span>;
-        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"if you want to contiue?(y/n):"</span>;
-        <span class="hljs-built_in">cin</span> &gt;&gt; exitFlag;
-        <span class="hljs-keyword">if</span> (exitFlag == <span class="hljs-string">'n'</span>)
-            <span class="hljs-keyword">break</span>;
-        <span class="hljs-comment">//system("pause");</span>
-    &#125;
-&#125;
-<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">fibon_elem</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pos, <span class="hljs-keyword">int</span> &amp;elem)</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-comment">//检查位置是否合理</span>
-    <span class="hljs-keyword">if</span> (pos &lt;= <span class="hljs-number">0</span> || pos &gt; <span class="hljs-number">1024</span>)
-    &#123;
-        elem = <span class="hljs-number">0</span>;
-        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
-    &#125;
++ 静息态功能脑网络方法的应用
+  + 在青少年患者中，同样出现脑网络在部分脑区的显著异常，包括前扣带回、背外侧前额叶、脑岛、杏仁核以及部分颖叶区域等。
+  + 杏仁核的度指标与病程呈现显著的正相关趋势。  
 
-    <span class="hljs-comment">//位置为1和2时，elem的值为1</span>
-    elem = <span class="hljs-number">1</span>;
-    <span class="hljs-keyword">int</span> n_2 = <span class="hljs-number">1</span>, n_1 = <span class="hljs-number">1</span>;
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> ix = <span class="hljs-number">3</span>; ix &lt;= pos; ix++)
-    &#123;
-        elem = n_2 + n_1;
-        n_2 = n_1;
-        n_1 = elem;
-    &#125;
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
-&#125;</code></pre>
+  + 无论首发抑郁症患者还是长期患者在“憎恨环路”的关键区域中，包括额上回，脑岛，豆状壳等区域均表现出显著异常
 
-<p>注释：第一次写这个，就随便贴个小练习好了</p>
+## 机器学习方法在功能磁共振影像数据中的研究
++ 分类器
+  + 支持向量机（Support Vector machine ,SVM）
+  + 费舍尔线性判别式
+
+ -->
+<h2 id="研究方法"><a href="#研究方法" class="headerlink" title="研究方法"></a>研究方法</h2><h3 id="基于静息态脑电的抑郁识别及源定位研究"><a href="#基于静息态脑电的抑郁识别及源定位研究" class="headerlink" title="基于静息态脑电的抑郁识别及源定位研究"></a><a href="https://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CMFD&dbname=CMFD201902&filename=1019874660.nh&uid=WEEvREcwSlJHSldRa1FhcTdnTnhYWUlRRE4xNDVBWkFHclJXTzFHeFpBWT0=A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&v=MjYxNDFyQ1VSN3FmWU9adUZ5RG5VYjNOVkYyNkY3dS9HdGZLcjVFYlBJUjhlWDFMdXhZUzdEaDFUM3FUcldNMUY=" target="_blank" rel="noopener">基于静息态脑电的抑郁识别及源定位研究</a></h3><p>发表时间：2019年5月29日<br>来源：中国硕士学位论文</p>
+<p>概述：提出了一种投票策略，对分类算法结果的基础上，进行改进。</p>
+<ol>
+<li>选择被试对象<ul>
+<li>年龄</li>
+<li>学历</li>
+<li>染发</li>
+<li>左右手</li>
+<li>是否服药 </li>
+</ul>
+</li>
+<li>对采集的脑点数据进行预处理<ul>
+<li>采集到的数据有噪声，想办法降低噪声与伪迹<ul>
+<li>利用滤波，去掉高频和低频</li>
+<li>去除眼电（采用FastICA）</li>
+<li>分频率波段，使用Hanning滤波器，提取三个波段</li>
+<li>数据分段，把静息状态的分段提取出来</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>脑电特征的提取<ul>
+<li>提取线性特征</li>
+<li>非线性动力学特征</li>
+</ul>
+</li>
+<li>进行分类<ul>
+<li>使用CFS的GSW对三个波段进行特征选择</li>
+<li>使用Min-Max归一化处理所有特征值</li>
+<li>使用五个分类器（BN,SVM,KNN,C4.5和RF）进行处理并使用该论文提出的投票策略进行处理，去最高分进行类别预测。  </li>
+</ul>
+</li>
+</ol>
+<h3 id="使用结构MRI的首次使用药物的MDD的机器学习分类"><a href="#使用结构MRI的首次使用药物的MDD的机器学习分类" class="headerlink" title="使用结构MRI的首次使用药物的MDD的机器学习分类"></a><a href="https://ieeexplore.ieee.org/abstract/document/8880675" target="_blank" rel="noopener">使用结构MRI的首次使用药物的MDD的机器学习分类</a></h3><p> 发表时间：23 October 2019<br> 发表在：IEEE Access ( Volume: 7 )</p>
+<ol>
+<li>选择参加者，这里要区分，接受药物的治疗者，未接受药物的治疗者，以及健康对照组，具体还要对年龄，性别和受教育成都等进行细分。</li>
+<li>采集fMRI数据</li>
+<li>图像处理：使用FreeSurfer对图像处理，使用两种方法分离大脑结构：<ul>
+<li>the surface-based stream method aims to identify the pial surface of the cortical structure, which represents the boundary between the white and gray matter<br>基于表面流的方法，目标是识别皮质结构的皮层表面</li>
+<li>it employs a volume-based streaming method that aims to identify surfaces of the subcortical structure<br>基于体积的流方法，识别皮层下结构表面。</li>
+</ul>
+</li>
+<li>特征选择<ul>
+<li>从FreeSurfer得到的数据，找出有用的<ul>
+<li>p-value小于0.01，通过t-test进行样本是否具有统计学显著性的判断</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>超参数设定和性能度量<ul>
+<li>通过检查验证（CV）的方法来确定超参数，这里因为样本少，使用了double LOOCV的方式。</li>
+<li>上面找到超参数之后，形成混淆矩阵，计算ACC,FPR,TPR来进行评判。</li>
+</ul>
+</li>
+<li>分类模型<ul>
+<li>超参数对GBM和SVM影响大，所以设置一个宽而密集的网格，这样可以从网格中间而不是边界寻找最佳参数。</li>
+<li>使用了六个分类模型<ul>
+<li>TreeBagging<ul>
+<li>避免过度拟合，最大深度设置为4-7，树的数量设置为30.50,70。</li>
+</ul>
+</li>
+<li>RF</li>
+<li>MLP<ul>
+<li>最佳隐藏单元设置为 10,20,30。</li>
+</ul>
+</li>
+<li>AdaBoost<ul>
+<li>帮助上面的分类器集合起来，训练成一个强分类器</li>
+</ul>
+</li>
+<li>GBM<ul>
+<li>同上，提升准确度</li>
+</ul>
+</li>
+<li>SVM<ul>
+<li>确保最优解</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="重度抑郁症和抗抑郁药调节有关的主要功能性大脑连接"><a href="#重度抑郁症和抗抑郁药调节有关的主要功能性大脑连接" class="headerlink" title="重度抑郁症和抗抑郁药调节有关的主要功能性大脑连接"></a><a href="https://www.nature.com/articles/s41598-020-60527-z" target="_blank" rel="noopener">重度抑郁症和抗抑郁药调节有关的主要功能性大脑连接</a></h3><p>发表时间：26 February 2020<br>发表在：Scientific Reports 10</p>
+<ol>
+<li>选取参加者</li>
+<li>神经影像数据预处理<ul>
+<li>T1加权像和静息态功能图像,在matlabR2014a上使用<strong>SPM8</strong>进行预处理。</li>
+<li>使用切片定时(slice-timing)校对后将其与均值图像重新对齐。</li>
+<li>对上一步处理的图像进行进一步的分割，获得归一化参数，并将fMRI数据进行归一化在2<em>2</em>2mm<sup>2</sup>的体素中重新采样</li>
+<li>最后使用各向同性的6mm高斯核函数，对图像进行平滑处理。</li>
+</ul>
+</li>
+<li>FC选择的分类算法<ul>
+<li>使用L1正则化的稀疏规范相关分析（L1-SCCA）来减少特征数量，排除过度拟合的影响。</li>
+<li>用一元线性回归（SLR），识别对分类有高贡献的元素。</li>
+<li>使用嵌套特征选择和留一法交叉验证（LOOCV）来验证<h2 id="存在的一些问题？"><a href="#存在的一些问题？" class="headerlink" title="存在的一些问题？"></a>存在的一些问题？</h2></li>
+</ul>
+</li>
+</ol>
 
             </article>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/EssentialC/">EssentialC++</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/cpp/">cpp</a>
-                    
-                      <a class="hover-with-bg" href="/tags/EssentialC/">EssentialC++</a>
-                    
-                  </div>
                 
               </div>
               
@@ -288,15 +361,15 @@
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/06/24/EssentialC2-2/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">EssentialC2-2笔记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </div>
                   <div class="post-next col-6">
                     
+                    
+                      <a href="/2020/06/29/Mental-ill-prediction-2/">
+                        <span class="hidden-mobile">Mental-ill-prediction-2</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </div>
                 </div>
@@ -432,7 +505,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "EssentialP2-1&nbsp;",
+        "MDD_fMRI&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

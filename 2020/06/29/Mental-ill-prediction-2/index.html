@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="高天宇">
+  <meta name="keywords" content="">
+  <title>Mental-ill-prediction-2 - Atri</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>高天宇的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-06-29 21:10">
+      2020年6月29日 晚上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      32
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <h1 id="利用功能连接对脑疾病进行分类和预测"><a href="#利用功能连接对脑疾病进行分类和预测" class="headerlink" title="利用功能连接对脑疾病进行分类和预测"></a>利用功能连接对脑疾病进行分类和预测</h1><p><font color=red></font><br>本文的内容：</p>
+<ul>
+<li>进行了对FC预测和分类研究的全面综述，以对现有的大脑功能的处理方法和典型的分类策略进行指导。</li>
+<li>阐述了目前最先进的功能连接分析方法：<ul>
+<li>静态功能连接(static functional connectivity，SFC)</li>
+<li>动态功能连接(DFC)</li>
+</ul>
+</li>
+</ul>
+<p>研究背景：<br>脑功能成像技术，已成为研究脑疾病的重要工具：</p>
+<ul>
+<li>功能磁共振成像(fMRI) </li>
+<li>正电子发射断层扫描(PET)</li>
+<li>脑电图(EEG)</li>
+</ul>
+<p>&emsp;&emsp;我们非常希望利用功能性神经成像数据，揭示的大脑功能连接，用来表征大脑功能异常，进而有利于诊断和治疗。<br>&emsp;&emsp;其中fMRI能够以高空间分辨率对大脑功能进行非侵入性研究，并已广泛用于检测和描述大脑网络或功能关联区域之间的连接  </p>
+<p>如何从大量的测量数据中选择特征，作为生物标志物来建立模型，对脑功能障碍进行<strong>分类或预测</strong>是一个重要而具有挑战性的问题。</p>
+<ul>
+<li>分类：对在扫描时或扫描前已经获得的疾病标签进行分类</li>
+<li>预测：是预测未知的疾病标签、未来进展或连续变化  </li>
+</ul>
+<p>与分类相比，预测更困难，但却是更有希望的临床应用。</p>
+<p><font color=red>本文是对脑功能连接的各种测量方法和典型的分类策略进行综述</font><br>&emsp;&emsp; 通常情况下，功能连接被认为在扫描时间(通常是几分钟)内是固定的，而之前的大多数fMRI研究都采用了静态功能连接(SFC)分析。直到最近，越来越多令人兴奋的研究已经证明，将大脑功能连接视为随时间变化的动态，可以成功地揭示正常人类大脑在疾病状态下受到的干扰。</p>
+<hr>
+<ul>
+<li>一些名词：<ul>
+<li><font color=red>感兴趣区（ROI）</font>： area of interest<br>&emsp;&emsp;指研究者感兴趣的地方。  </li>
+<li><font color=red>功能连接（FC）</font>： functional connection<br>&emsp;&emsp;功能链接就是把某个脑区做成ROI，也叫种子点(seed region)，提取出其信号随时间点变化的序列(timecourse)，然后用这个序列去和全脑体素做相关。  </li>
+<li><font color=red>静态功能连接（SFC）</font>：static functional connectivity  </li>
+<li><font color=red>动态功能连接（DFC）</font>：dynamic functional connection  </li>
+<li><font color=red>体素（Voxel）</font>：数字数据于三维空间分割上的最小单位</li>
+<li><font color=red>主成分分析（PCA）</font>：Principal components analysis</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="1-静态功能连接-SFC"><a href="#1-静态功能连接-SFC" class="headerlink" title="1. 静态功能连接(SFC)"></a>1. 静态功能连接(SFC)</h2><h3 id="1-1-模型驱动的种子点间的功能连接分析"><a href="#1-1-模型驱动的种子点间的功能连接分析" class="headerlink" title="1.1 模型驱动的种子点间的功能连接分析"></a>1.1 模型驱动的种子点间的功能连接分析</h3><p>&emsp;&emsp;模型驱动法是用先验知识来确定一个大脑区域或体素的集合区作为ROI，然后探究大脑其他脑区与ROI功能连接。  </p>
+<ul>
+<li>三个关键步骤：  <ol>
+<li>确定ROI位置和形状或voxel的位置</li>
+<li>计算ROI的时间序列</li>
+<li>评估不同ROI之间的功能连接或ROI与大脑内的所有其他体素或脑区的功能连接    </li>
+</ol>
+</li>
+</ul>
+<p>&emsp;&emsp;上述步骤结束后，利用种子点法选择特定的ROI，计算与其他大脑脑区功能连接变化，所得功能连接强度可反映所选择的ROI及与其他大脑脑区之间的时间变动关系，这可作为分类和预测大脑精神疾病的特征。  </p>
+<ul>
+<li>使用种子点法，可以用PCA在一定程度上降低ROI的代表性时间序列中的噪声效应</li>
+<li>遇到的挑战：如何确定一个具有一致脑功能体素的合理脑区  </li>
+<li>两个代表性时间序列之间的功能连接主要是通过计算相关性来估计其线性关系，也可以通过互信息方法来评估其非线性关系。</li>
+</ul>
+<h3 id="1-2-数据驱动的基于-Spatial-Functional-Network-Maps-的分析"><a href="#1-2-数据驱动的基于-Spatial-Functional-Network-Maps-的分析" class="headerlink" title="1.2 数据驱动的基于 Spatial Functional Network Maps 的分析"></a>1.2 数据驱动的基于 Spatial Functional Network Maps 的分析</h3><p>和模型驱动的区别：数据驱动的方法估计功能网络不需要预先定义大脑区域或体素。 </p>
+<p>流行的方法：</p>
+<ul>
+<li>空间独立成分分析(ICA) </li>
+<li>主成分分析(PCA)</li>
+<li>和聚类方法 </li>
+</ul>
+<p>相对于ROI-based的方法， ICA方法的优点包括：</p>
+<ol>
+<li>不需要先验知识</li>
+<li>从整个大脑同时估计多个网络数据 </li>
+<li>重叠的成分,可以提供一个空间滤波的基础</li>
+<li>被试之间成分的自适应性，允许捕获区域内的被试间可变性。</li>
+</ol>
+<p>ICA的缺点：ICA以任意顺序生成ICs<br>解决方案：</p>
+<ol>
+<li>第一种策略是对每个被试分别执行ICA，然后使用主观识别等方法建立各被试之间的ICs对应关系</li>
+<li>组ICA（GIG-ICA）     </li>
+</ol>
+<h3 id="1-3功能网络连接（FNC）分析"><a href="#1-3功能网络连接（FNC）分析" class="headerlink" title="1.3功能网络连接（FNC）分析"></a>1.3功能网络连接（FNC）分析</h3><p>&emsp;&emsp;功能网络连接(FNC)分析采用了一种结合模型驱动和数据驱动方法的策略。<br>主要步骤：</p>
+<ol>
+<li>首先对受试者的fMRI数据进行组ICA分析得到受试者特异性功能网络(由ICs反映)及其相关波动[由时间序列(time courses，TCs)反映；</li>
+<li>通过计算其后处理的TCs之间的Pearson相关性的连接性度量来获得任意两个网络之间的功能连接，从而产生包括所有网络之间的连接性强度的功能连接矩阵，FNC与ICA都需要预先确定组件的数量。</li>
+</ol>
+<p>FNC与ROI区别：  </p>
+<ul>
+<li>FNC分析中，将数据驱动的方法应用于fMRI数据，生成功能共激活的大脑区域</li>
+<li>在基于ROI的方法中，大脑区域通常是通过先验知识来决定的</li>
+</ul>
+<h3 id="1-4其他的功能连接测量方法"><a href="#1-4其他的功能连接测量方法" class="headerlink" title="1.4其他的功能连接测量方法"></a>1.4其他的功能连接测量方法</h3><p>例如：区域一致性(ReHo)被提议用来反映区域功能连接性(或协同激活)</p>
+<h2 id="2-动态功能连接-DFC"><a href="#2-动态功能连接-DFC" class="headerlink" title="2. 动态功能连接(DFC)"></a>2. 动态功能连接(DFC)</h2><p>计算时间分辨率下的大脑不同脑区的连通性度量。</p>
+<h3 id="2-1-基于滑动窗方法的动态功能连接分析"><a href="#2-1-基于滑动窗方法的动态功能连接分析" class="headerlink" title="2.1 基于滑动窗方法的动态功能连接分析"></a>2.1 基于滑动窗方法的动态功能连接分析</h3><p>基本流程：</p>
+<ol>
+<li>通过测量滑动窗口中ROI或体素之间的功能连接来评估DFC，从而产生多个连接矩阵，</li>
+<li>对不同窗口中的fMRI数据执行ICA(或IVA)以生成动态空间网络模式，或对网络的时间序列(即时间序列)进行分段。</li>
+<li>计算时变的FNC  </li>
+</ol>
+<p>提取连接状态的方法：</p>
+<ul>
+<li>聚类<ul>
+<li>缺点：<ul>
+<li>当处理不一定具有理想分布的有噪声数据时，聚类方法可能无法收敛。  </li>
+<li>聚类分析的一个更严重的缺点是，该方法总是可以产生具有任意数量集群的分区，而不管使用的特性是否显示指示聚类的模式。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>主成分分析(PCA)</li>
+<li>Fisher discrimination dictionary learning (FDDL)</li>
+<li>空间和时间独立成分分析(ICA)  </li>
+</ul>
+<p>此外一些研究表明：低频震幅(ALFF)和FNC随时间的变化存在相关性。</p>
+<h3 id="2-2-用于提取动态连接性的无窗口方法"><a href="#2-2-用于提取动态连接性的无窗口方法" class="headerlink" title="2.2 用于提取动态连接性的无窗口方法"></a>2.2 用于提取动态连接性的无窗口方法</h3><ul>
+<li><p>方法提出原因：滑动时间窗方法中，窗口太长太短都不行。</p>
+</li>
+<li><p>无窗口的方法其概念是将观测窗口与原始时间过程的频率相适应。</p>
+</li>
+<li><p>主要优点：可获取任意变化率的功能连接。无窗口操作可以解决缺乏窗口长度标准的问<br>题。</p>
+</li>
+</ul>
+<h2 id="3-分类和预测"><a href="#3-分类和预测" class="headerlink" title="3. 分类和预测"></a>3. 分类和预测</h2><h3 id="3-1特征选择策略"><a href="#3-1特征选择策略" class="headerlink" title="3.1特征选择策略"></a>3.1特征选择策略</h3><h4 id="3-1-1-Filter方法（筛选过滤方法，避免冗余特征）"><a href="#3-1-1-Filter方法（筛选过滤方法，避免冗余特征）" class="headerlink" title="3.1.1 Filter方法（筛选过滤方法，避免冗余特征）"></a>3.1.1 Filter方法（筛选过滤方法，避免冗余特征）</h4><ul>
+<li>过滤方法被广泛使用</li>
+<li>他们使用数据集的一般特征，并为特征分配权重，从这些特征中选择了许多得分最高的特征</li>
+<li>最常见的过滤方法是<strong>使用组级统计测试</strong><ol>
+<li>首先使用不同的统计检验，如T检验、Welchs T检验和ranksum-test来识别具有组间差异的功能连接。</li>
+<li>然后将这些功能连接作为分类方法的输入特征</li>
+</ol>
+</li>
+<li>会出现的问题：<ul>
+<li>可能导致分类结果的偏倚</li>
+<li>特征通常是基于它们的P值来选择的</li>
+</ul>
+</li>
+<li>一种评分标准 Fisher评分</li>
+<li>其他的分类算法<ul>
+<li>基于相关的特征选择(correlation-based-feature selection, CFS)</li>
+<li>基于RELIEF的算法</li>
+<li>上述两个算法<strong>特征选择采用了最小冗余、最大关联(mRMR)算法。</strong>，结果也很满意</li>
+</ul>
+</li>
+<li>基于过滤的缺点<ul>
+<li>过滤方法选择的特征没有经过优化以适应任何特定的分类器</li>
+<li>一些过滤方法由于忽略了特征之间的关系而倾向于选择冗余特征</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-1-2-Wrapper方法和-Embedded-方法"><a href="#3-1-2-Wrapper方法和-Embedded-方法" class="headerlink" title="3.1.2 Wrapper方法和 Embedded 方法"></a>3.1.2 Wrapper方法和 Embedded 方法</h4><ul>
+<li>wrapper方法<ul>
+<li>原理： 使用分类器或预测模型对特性进行排序。这类方法评估了不同特征组合的分类性能，并试图识别出能够提供最大分辨能力的特征的最优子集。</li>
+<li>递归特征消除(RFE)是最常用的一种方法，它通过递归地考虑越来越小的特征组合来选择特征</li>
+<li>遗传算法(GA)家族</li>
+<li>优势：<ul>
+<li>倾向于选择性能比筛选器方法更好的特性</li>
+<li>可以为特定类型的分类器提供最佳特性选择</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>如果观察值不大，wrapper方法可能会过度拟合</li>
+<li>wrapper方法的计算成本要大得多，因为它们需要递归地创建分类器。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Embedded 方法<ul>
+<li>区别于wrapper：学习部分和特征选择部分是不可分割的</li>
+<li>常用方法<ul>
+<li>LASSO方法</li>
+<li>岭回归</li>
+<li>弹性网络算法</li>
+</ul>
+</li>
+<li>优势：因为Embedded方法选择特定于分类器的特性，所以它们更快，计算代价更小。  </li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-预测和分类的机器学习模型"><a href="#3-2-预测和分类的机器学习模型" class="headerlink" title="3.2 预测和分类的机器学习模型"></a>3.2 预测和分类的机器学习模型</h3><h4 id="3-2-1-传统机器学习模型"><a href="#3-2-1-传统机器学习模型" class="headerlink" title="3.2.1 传统机器学习模型"></a>3.2.1 传统机器学习模型</h4><ul>
+<li>支持向量机(SVM)是目前最流行的方法<ul>
+<li>标准支持向量机是一种二元分类器，它推广了最佳分离超平面以更好地分离不同组的数据</li>
+<li>基本思想：找到与另一个类的观测值最接近的一个类的观测值</li>
+</ul>
+</li>
+<li>线性判别分析（LDA）<ul>
+<li>基本思想：它将特征投射到低维空间中，在低维空间中，不同组的数据可以最大限度地分离</li>
+<li>LDA和PCA区别：成分分析用于寻找使数据方差最大的轴，而LDA用于寻找使多个组之间的距离最大的轴  </li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-2-深度学习模型"><a href="#3-2-2-深度学习模型" class="headerlink" title="3.2.2 深度学习模型"></a>3.2.2 深度学习模型</h4><ul>
+<li>优点：深度学习方法能够通过使用具有不同复杂程度的层次结构，直接从原始数据中学习最优表示，在较低层次上对原始输入数据空间具有更多的信息性。</li>
+<li>常用方法：<ul>
+<li>人工神经网络(ANN)<ul>
+<li>ANN通过构建人工神经元和神经元之间的连接层来学习从例子中完成任务</li>
+</ul>
+</li>
+<li>深度信念网络(Deep belief network, DBN)<ul>
+<li>DBN不是使用确定性函数和重构误差(如自动编码器)，而是使用最大似然估计进行预训练。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>面临问题：<ul>
+<li>时间和计算资源的数量</li>
+<li>潜在的过度拟合问题</li>
+<li>从深度学习方法中获得的结果的可解释性</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-脑功能连接在分类脑疾病方面的应用"><a href="#4-脑功能连接在分类脑疾病方面的应用" class="headerlink" title="4.脑功能连接在分类脑疾病方面的应用"></a>4.脑功能连接在分类脑疾病方面的应用</h2><ul>
+<li>精分和双相情感障碍</li>
+<li>自闭症谱系障碍和注意缺陷多动症</li>
+<li>阿尔兹海默症症和轻度认知障碍障碍</li>
+</ul>
+<h2 id="5-在确定脑障碍的生物标记物和个体的分类任务上的挑战和困难"><a href="#5-在确定脑障碍的生物标记物和个体的分类任务上的挑战和困难" class="headerlink" title="5. 在确定脑障碍的生物标记物和个体的分类任务上的挑战和困难"></a>5. 在确定脑障碍的生物标记物和个体的分类任务上的挑战和困难</h2><h3 id="5-1-缺少诊断的“金标准”"><a href="#5-1-缺少诊断的“金标准”" class="headerlink" title="5.1 缺少诊断的“金标准”"></a>5.1 缺少诊断的“金标准”</h3><ul>
+<li>诊断仅由可观察到的症状决定，而访谈和病史是影响诊断的主要因素</li>
+<li>我们非常需要根据生物数据，并以客观和定量验证的方法确立领域标准  </li>
+</ul>
+<h3 id="5-2-从高维测量中识别准确的病理特征作为生物标志物是很困难的"><a href="#5-2-从高维测量中识别准确的病理特征作为生物标志物是很困难的" class="headerlink" title="5.2 从高维测量中识别准确的病理特征作为生物标志物是很困难的"></a>5.2 从高维测量中识别准确的病理特征作为生物标志物是很困难的</h3><p>考虑神经影响数据通常有比样本数量更多的特性，因此，减少特征或者说使用特征工程选取更好的特征作为模型判别的依据可能是更好的。</p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/07/01/MDD-fMRI/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">MDD_fMRI</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/06/27/Mental-ill-prediction-1/">
+                        <span class="hidden-mobile">基于脑影像的精神疾病预测 归纳</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 3,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Mental-ill-prediction-2&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
